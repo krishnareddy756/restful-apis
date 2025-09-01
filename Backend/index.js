@@ -9,14 +9,17 @@ app.use(express.static(path.join(__dirname,'public')));//for static files and pu
 const port=3000;
 let posts=[
   {
+    id:"1a",
     username: 'JohnDoe',
     content: 'This is my first post!'
   },
   {
+    id:"1b",
     username: 'JaneDoe',
     content: 'This is my second post!'
   },
   {
+    id:"1c",
     username: 'AliceWonder',
     content: 'This is my third post!'
   }
@@ -31,6 +34,11 @@ app.post('/posts',(req,res)=>{
   let { username, content } = req.body;
   posts.push({ username, content });
   res.redirect('/posts');
+})
+app.get('/posts/:id',(req,res)=>{
+  let {id}=req.params;
+  let post=posts.find((p)=>id===p.id);
+  res.render('show', { post });
 })
 app.listen(port,()=>{
   console.log(`Server is running on port ${port}`);

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>All posts</title>
 </head>
 <body>
@@ -12,6 +12,8 @@
     <div class="post">
         <h2 class="user"><%= post.username %></h2>
         <p><%= post.content %></p>
+        <br><br/>
+        <a href="/posts/<%= post.id %>">View Post</a>
     </div>
     <%}%>
     <br></br>
