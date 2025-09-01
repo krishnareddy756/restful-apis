@@ -1,0 +1,14 @@
+.h1{
+    color: blue;
+}
+
+.post{
+    border: 1px solid #ccc;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.user{
+    font-weight: bold;
+    color: darkblue;
+}
